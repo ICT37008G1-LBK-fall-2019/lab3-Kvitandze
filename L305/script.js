@@ -1,11 +1,13 @@
-let number = prompt('ramdeni momxmareblis sheyvana gsurs');
-let arr = [];
-let i = 0;
-let name;
-while(i < number) {
-    name = prompt('sheiyvanet studentis saxeli')
-    arr.push(name);
-    i++;
+function enterNames() {
+    let n = prompt("How many names do you want to enter?");
+    let names = [];
+
+    for (let i = 0; i < n; i++) {
+        let name = prompt("Please enter student name: ");
+        names.push(name);
+    }
+
+    return names;
 }
 
-document.write(arr.sort())
+console.log(enterNames().sort());

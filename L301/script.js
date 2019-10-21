@@ -1,17 +1,16 @@
+function checkText (text, forbiddenWords) {
+    for(let word of forbiddenWords) {
+        if(text.indexOf(word) != -1) {
+            return "შეიცავს აკრძალულ სიტყვებს";
+        }
+    }
+    return "არ შეიცავს აკრძალულ სიტყვებს";
+}
 
-let str = 'საქართველოში გამოაქვეყნეს , რომელიც შეიქმნა   სგან, ეს არის ცუდი ს ბრალი';
-document.querySelector('p').textContent = str;
-let myArr = ['რეკლამა','ვირუსი','მარკეტინგი']
-let dontsay = [];
-                for (var i = 0; i < myArr.length; i++) {
-                    if(str.indexOf(myArr[i]) != -1) {
-                        dontsay.push(myArr[i])
-                    } else {
-                        continue;
-                }
-            }
- if(dontsay.length > 0) {
-     alert('tqven iyenebt cud sityvebs: ' + dontsay);
- } else {
-     alert('its okay')
- }
+let forbidden = ["რეკლამა", "მარკეტინგი", "ვირუსი"];
+let text1 = "უაზრო რეკლამა";
+let text2 = "ტესქტი აკრძალული სიტყვების გარეშე";
+
+
+console.log(checkText(text1, forbidden));
+console.log(checkText(text2, forbidden));

@@ -1,23 +1,16 @@
-let question = prompt('ramdeni sityvis sheyvana ginda');
-let i = 0;
-let myArray = [];
-while (i < question) {
-    let words = prompt('sheiyvane sasurveli sityva');
-    myArray.push(words);
-    i++;
-    
-}
-let newWord = '';
-console.log(myArray)
-if (question == i) {
-    newWord =  prompt('ra sityvas edzebt?');
-}
+function filterNames() {
+    let names = [];
+    let toCompare = prompt("Please enter string to compare: ");
+    let n = prompt("How many names do you want to enter?");
 
-let lastArray = []
-for (var j = 0; j < myArray.length; j++) {
-    if (myArray[j].indexOf(newWord) != -1){
-        lastArray.push(myArray[j])
+    for (let i = 0; i < n; i++) {
+        let name = prompt("Please enter student name: ");
+        if(toCompare.includes(name)) {
+            names.push(name);
+        }  
     }
+
+    return names;
 }
 
-console.log('rao arao?',lastArray);
+console.log(filterNames());

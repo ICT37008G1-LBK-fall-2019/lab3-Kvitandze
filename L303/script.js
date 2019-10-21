@@ -1,20 +1,15 @@
-let lari = prompt('შეიყვანეთ რიცხვი');
-let h2 = document.querySelector('h2');
-let newlari;
-
-
-if (lari.indexOf('L') === 0) {
-    console.log(lari);
-     newlari = lari.substr(1,3);
-    h2.textContent = newlari / 2.6 + ' amdeni dolaria';
-} else if (lari.indexOf('$') === 0){
-        newlari = lari.substr(1,3);
-      h2.textContent = newlari * 2.6 + ' amdeni laria';
+function currencyConvertor (value) {
+    let amount = value.substring(1, value.length);
     
-} else {
-    alert('Miutite valuta')
+    if (value.includes("$")) {
+        return 'L'.concat((amount * 2.6).toFixed(2));
+    }
+    else if(value.includes("L")) {
+        return '$'.concat((amount / 2.6).toFixed(2));
+    } 
+    else
+        return "Unknown currency";
 }
 
-
-
-
+console.log(currencyConvertor("$10"));
+console.log(currencyConvertor("L10"));

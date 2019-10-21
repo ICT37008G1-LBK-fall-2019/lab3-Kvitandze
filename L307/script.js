@@ -1,41 +1,31 @@
-let firstPrompt = prompt('ramdeni moswavle gsurt pirvel jgufshi');
+function enterNames() {
+    let n = prompt("How many names do you want to enter?");
+    let names = [];
 
-let i = 0;
-let firstArr = []
-let secAr = [];
-let names;
-
-while (i < firstPrompt) {
-    names = prompt('sheiyvanet saxelebi');
-   firstArr.push(names);
-    i++;
-}
-    if (i == firstPrompt) {
-    let secPrompt = prompt('ramdeni moswavle gsurt meore jgufshi');
-     let j = 0;   
-        while (j < secPrompt) {
-          var secNames = prompt('sheiyvanet meore jgufis moswavleebis saxelebi');
-            secAr.push(secNames);
-            j++;
-            
-        }
-}
-let mainArr = [...firstArr,...secAr];
-let listingArr = []
-
-    document.write('First List: ' + firstArr);
-document.write('<br>');
-    document.write('Second List: ' + secAr);
-document.write('<br>');
-for (let k = 0; k < mainArr.length; k++) {
-    
-    if (listingArr.indexOf(mainArr[k]) === -1) {
-        listingArr.push(mainArr[k]);
+    for (let i = 0; i < n; i++) {
+        let name = prompt("Please enter student name: ");
+        names.push(name);
     }
-    
-  
-}
-  document.write('Main List: '+ listingArr )
 
+    return names;
+};
 
+function filterUniques (arr) {
+    arr.sort();
+    let uniques = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        if (arr[i] != arr[i - 1]) {
+            uniques.push(arr[i]);
+        }
+    };
+
+    return uniques;
+};
+
+let list1 = enterNames();
+let list2 = enterNames();
+let sortedUnitedList = list1.concat(list2);
+
+console.log(filterUniques(sortedUnitedList));
 
